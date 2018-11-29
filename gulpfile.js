@@ -3,7 +3,8 @@
 // npm i gulp gulp-sass browser-sync gulp-cssnano gulp-rename del gulp-autoprefixer gulp-notify gulp-pug --save-dev
 
 var gulp 			= require('gulp'); // Подключаем Gulp
-    sass 			= require('gulp-sass'); //Подключаем Sass пакет
+	sass 			= require('gulp-sass'); //Подключаем Sass пакет
+	watch			= require('gulp-watch');
     browserSync 	= require('browser-sync'); // Подключаем Browser Sync
     cssnano     	= require('gulp-cssnano'); // Подключаем пакет для минификации CSS
     rename      	= require('gulp-rename'); // Подключаем библиотеку для переименования файлов
@@ -24,7 +25,7 @@ var gulp 			= require('gulp'); // Подключаем Gulp
 	        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) //автопрефикс
 	        .pipe(gulp.dest('app/css'))
 	        // .pipe( notify( 'Кэп! Твой код великолепен!' ) )
-	        .pipe(browserSync.stream());
+	        // .pipe(browserSync.stream());
 	});
 
 	gulp.task('css-min', function() {
@@ -45,7 +46,7 @@ var gulp 			= require('gulp'); // Подключаем Gulp
 			.pipe(pug())
 			.pipe(gulp.dest("app"))
 			// .pipe( notify( 'Кэп! Твой код великолепен!' ) )
-			.pipe(browserSync.reload({stream: true}));
+			// .pipe(browserSync.reload({stream: true}));
 	});
 
 	gulp.task('browser-sync', function() { // Создаем таск browser-sync
