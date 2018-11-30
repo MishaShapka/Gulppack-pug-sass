@@ -3,8 +3,7 @@
 // npm i gulp gulp-sass browser-sync gulp-cssnano gulp-rename del gulp-autoprefixer gulp-notify gulp-pug --save-dev
 
 var gulp 			= require('gulp'); // Подключаем Gulp
-	sass 			= require('gulp-sass'); //Подключаем Sass пакет
-	watch			= require('gulp-watch');
+    sass 			= require('gulp-sass'); //Подключаем Sass пакет
     browserSync 	= require('browser-sync'); // Подключаем Browser Sync
     cssnano     	= require('gulp-cssnano'); // Подключаем пакет для минификации CSS
     rename      	= require('gulp-rename'); // Подключаем библиотеку для переименования файлов
@@ -12,7 +11,8 @@ var gulp 			= require('gulp'); // Подключаем Gulp
     autoprefixer 	= require('gulp-autoprefixer'); //Подключаем автопрефиксы
 	notify 			= require('gulp-notify'); //Подклчаем уведомления
 	pug 			= require('gulp-pug'); //Подключаем Pug
-
+	gulpPugBeautify = require('gulp-pug-beautify');
+	
 	gulp.task('sass', function(){
 	    return gulp.src('app/sass/**/*.sass') // Берем все sass файлы из папки sass и дочерних, если таковые будут
 	    	.pipe( sass().on( 'error', notify.onError( //уведомления
@@ -25,7 +25,7 @@ var gulp 			= require('gulp'); // Подключаем Gulp
 	        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) //автопрефикс
 	        .pipe(gulp.dest('app/css'))
 	        // .pipe( notify( 'Кэп! Твой код великолепен!' ) )
-	        // .pipe(browserSync.stream());
+	        .pipe(browserSync.stream());
 	});
 
 	gulp.task('css-min', function() {
@@ -37,17 +37,22 @@ var gulp 			= require('gulp'); // Подключаем Gulp
 	
 	gulp.task('pug', function() {
 		return gulp.src("app/*.pug")
-			.pipe( pug().on( 'error', notify.onError( //уведомления
+			.pipe( pug({
+				pretty:true
+			}).on( 'error', notify.onError( //уведомления
 				{
 				message: "<%= error.message %>",
 				title  : "Кэп! Твой код пошел по пизде!"
 				} ) )
 			)
-			.pipe(pug())
+		
+			.pipe(gulpPugBeautify({ omit_empty: true }))
 			.pipe(gulp.dest("app"))
 			// .pipe( notify( 'Кэп! Твой код великолепен!' ) )
 			// .pipe(browserSync.reload({stream: true}));
 	});
+
+	
 
 	gulp.task('browser-sync', function() { // Создаем таск browser-sync
 	    browserSync({ // Выполняем browser Sync
@@ -61,7 +66,7 @@ var gulp 			= require('gulp'); // Подключаем Gulp
 	gulp.task('app',['browser-sync', 'sass', 'css-min', 'pug'], function() {
 		gulp.watch('app/sass/**/*.sass', ['sass']).on('change', browserSync.reload); //Наблюдение за sass файлами
 		gulp.watch('app/*.pug', ['pug']).on('change', browserSync.reload);
-	    gulp.watch('app/css/*.css', ['css-min']).on('change', browserSync.reload); //Наблюдение за css файлами в корне проекта
+	    // gulp.watch('app/css/*.css', ['css-min']).on('change', browserSync.reload); //Наблюдение за css файлами в корне проекта
 	    gulp.watch('app/*.html').on('change', browserSync.reload); //Наблюдение за HTML файлами в корне проекта
 		gulp.watch('app/js/**/*.js').on('change', browserSync.reload); //Наблюдение за JS файлами в папке js
 	});
