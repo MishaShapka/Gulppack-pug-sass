@@ -5,6 +5,135 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
-        link(rel="stylesheet", href="css/main.min.css")
+        link(rel="stylesheet", href="css/main.css")
     body
- 
+        header.header
+            .container
+                .header-nav
+                    h3 Событие
+                    nav
+                        ul
+                            li
+                                a(href="") О нас
+                            li
+                                a(href="") Жюри
+                            li
+                                a(href="") Конкуренты
+                            li
+                                a(href="") Контакты
+                .header-title
+                    h1 Вы готовы к битве?
+                    p Столкновение графических дизайнеров
+                    a.header-title_btn(href="#" alt="") Скачать заявку
+        main
+            section.sec-batle
+                .container
+                    h1 Битва дизайнеров
+                    p Управление по делам культуры БГУ при поддержке Творческого союза БГУ представляет проект "Битва дизайнеров"!
+                    |Конкурс направлен на привлечение студентов к работе в области графического дизайна. 
+                    |Мы нацелены раскрыть и помочь развить твои таланты!
+
+                    h2 Условие участия в битве
+                    .sec-batle_flex
+                        .sec-batle_flex-item
+                            p.sec-batle_p1
+                                span.sp-01 > 01
+                                |В Конкурсе принимают участие студенты Белорусского государственного университета.
+                            p.sec-batle_p1
+                                span.sp-02 > 02
+                                |От одного факультета  принимается неограниченное количество заявок.
+                            p.sec-batle_p1
+                                span.sp-03 > 03
+                                |Участники имеют право использовать свой компьютер во время выполнения заданий.
+                        .sec-batle_flex-item
+                            p.sec-batle_p1
+                                span.sp-04 > 04
+                                |16-22 марта 2019 г. – подача заявок на участие в Конкурсе.
+                            p.sec-batle_p1
+                                span.sp-05 > 05
+                                |27-31 марта 2018 г. – просмотр заявок членами жюри.
+                            p.sec-batle_p1
+                                span.sp-06 > 06
+                                |3 апреля 2019 г. – отборочный тур.
+                    p.sec-batle_p2 Если ты давно неровно дышишь к этому направлению, или же ты новичок и хочешь попробовать свои силы, тебе к нам!
+                    |Не сиди на месте, не бойся выйти из тени, покажи себя, и, быть может, именно Ты станешь новой звездой студенческого дизайна!
+                    p.sec-batle_p3 Представление начинается 10/04/2019 и заканчивается 11/05/2019
+                    p.sec-batle_p4 Nulla quis lorem ut libero malesuada feugiat eget tincidunt nibh pulvinar.
+                    a.sec-batle_btn(href="#" alt="") Скачать заявку
+            section.sec-feedback
+                h1 Они уже говорили о Битвах
+                p Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Estibulum ante ipsum primis in faucibus orci luctus et ultrices.
+                .sec-feedback_flex
+                    .sec-feedback_flex-item
+                        img(src="img/teddy-petrosky-430688-unsplash.png", alt="")
+                        h2 Юлия Перищ
+                        p Ведущий дизайнер ArtBlue
+                    .sec-feedback_flex-item
+                        img(src="img/alex-perez-578974-unsplash.png", alt="")
+                        h2 Диана Нарумова
+                        p Графический дизайнер Loft Studio
+                    .sec-feedback_flex-item
+                        img(src="img/ayo-ogunseinde-93181-unsplash.png", alt="")
+                        h2 Виктор Львов
+                        p Креативный директор Meduza
+                    .sec-feedback_flex-item
+                        img(src="img/tanja-heffner-196114-unsplash.png", alt="")
+                        h2 Джон Стоун
+                        p Креативный директор Amazing Game
+                    .sec-feedback_flex-item
+                        img(src="img/sawyer-bengtson-326312-unsplash.png", alt="")
+                        h2 Эмилия Кондратьева
+                        p Art директор Victor&Co 
+                    .sec-feedback_flex-item
+                        img(src="img/matheus-ferrero-216385-unsplash.png", alt="")
+                        h2 Виктория Грин
+                        p Art директор Victor&Co 
+                h1 Обратный отсчет
+                .counter
+            section.sec-sponsors
+                h1 Спонсоры
+                .sec-sponsor_flex
+                    img(src="img/clients-01.png", alt="")
+                    img(src="img/clients-02.png", alt="")
+                    img(src="img/clients-03.png", alt="")
+                    img(src="img/clients-04.png", alt="")
+            section.sec-juri
+                h1 Жюри 2019
+                .sec-juri_flex
+                    .sec_juri_flex-item
+                        img(src="img/kyle-loftus-589739-unsplash.png", alt="")
+                        h2 Юлия Золина
+                        p Ведущий дизайнер Amazing Game
+                    .sec_juri_flex-item
+                        img(src="img/pete-bellis-435777-unsplash.png", alt="")
+                        h2 Мария Кравц
+                        p Креативный директор Victor&Co
+                    .sec_juri_flex-item
+                        img(src="img/joe-gardner-149699-unsplash.png", alt="")
+                        h2 Алина Сергеева
+                        p Графический дизайнер 2Гис
+            section.sec-contacts
+                h1 Контакты
+                p Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada.
+                form(action="")
+                    .sec-contacts_flex
+                        .sec-contacts_flex-item
+                            input(type="text")
+                            input(type="text")
+                        .sec-contacts_flex-item
+                            input(type="text")
+                            input(type="text")
+                    .message
+                        input(type="text")
+                    button.form_btn Отправить
+            footer.footer
+                h1 Новостная рассылка
+                p Если вы хотите первыми узнать о ходе Битвы, подпишитесь на рассылку.
+                .footer_email
+                    input(type="text")
+                    button.email_btn Подписаться
+                .social
+                    img(src="img/2-layers.png", alt="")
+                    img(src="img/2-layers(1).png", alt="")
+                    img(src="img/2-layers(2).png", alt="")
+                    img(src="img/2-layers(3).png", alt="")

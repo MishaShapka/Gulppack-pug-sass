@@ -1,6 +1,6 @@
 // npm i gulp -g
 // npm init
-// npm i gulp gulp-sass browser-sync gulp-cssnano gulp-rename del gulp-autoprefixer gulp-notify gulp-pug --save-dev
+// npm i gulp gulp-sass browser-sync gulp-cssnano gulp-rename del gulp-autoprefixer gulp-notify gulp-pug gulp-pug-beautify --save-dev
 
 var gulp 			= require('gulp'); // Подключаем Gulp
     sass 			= require('gulp-sass'); //Подключаем Sass пакет
