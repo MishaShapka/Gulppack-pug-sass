@@ -165,12 +165,13 @@ h1 {
   background-image: linear-gradient(to top, #ff00cc 0%, #333399 64%, #333399 100%); }
 
 .sec-feedback h1 {
-  margin-top: 140px; }
+  padding-top: 100px; }
 
 .sec-feedback p {
   font-size: 22px; }
 
 .sec-feedback .sec-feedback_flex {
+  margin-top: 60px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -197,10 +198,8 @@ h1 {
 .sec-feedback .sec-feedback_flex .sec-feedback_flex-item p {
   font-size: 16px; }
 
-.sec-feedback h1 {
-  margin-top: 100px; }
-
 .sec-sponsors {
+  color: #444444;
   text-align: center; }
 
 .sec-sponsors h1 {
@@ -214,6 +213,7 @@ h1 {
   display: flex; }
 
 .sec-juri {
+  color: #444444;
   margin-top: 200px;
   text-align: center; }
 
@@ -238,6 +238,7 @@ h1 {
   font-size: 16px; }
 
 .sec-contacts {
+  color: #444444;
   text-align: center;
   margin-top: 180px; }
 
@@ -267,7 +268,7 @@ h1 {
   width: 90%;
   border-bottom: 6px solid #555555; }
 
-.sec-contacts form .message {
+.sec-contacts form .message input {
   margin-top: 60px;
   height: 20px;
   border: none;
@@ -283,6 +284,7 @@ h1 {
   padding: 20px 60px; }
 
 .footer {
+  color: #444444;
   margin-top: 123px;
   text-align: center;
   background-color: #eeeeee; }
@@ -322,4 +324,5 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 300px;
-  margin: 80px auto; }
+  padding: 80px 0 60px 0;
+  margin: 0 auto; }
